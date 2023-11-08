@@ -1004,6 +1004,7 @@ div.pizza.active {
   white-space: nowrap;
   -webkit-animation: marquee 35.5s infinite linear;
   animation: marquee 35.5s infinite linear;
+  border-top: 1px solid red;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
 }
