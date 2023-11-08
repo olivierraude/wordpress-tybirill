@@ -1,0 +1,105 @@
+section {
+  max-width: $section-width;
+  padding: $section-padding;
+  margin: auto;
+  
+  &:first-of-type {
+      padding: 50px 0 0 0!important;
+  }
+}
+
+//TODO -> Test nesting BEM container-logo / container-about ...
+.container {
+  align-items: center;
+  
+  &.logo {
+    display: flex;
+    justify-content: center;
+    scale: .5;
+    opacity: 0;
+    transition: scale 2s ease,
+                opacity 2s ease;
+
+    img {
+      width: 30rem;
+    }
+  }
+
+  &.about,
+  &.takeout {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &.menu,
+  &.contact {
+    text-align: center;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+  }
+  
+  &.contact {
+    margin: 80px 0;
+  }
+
+  &.menu a {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    font-size: 2.4rem;
+    letter-spacing: 1px;  
+    font-weight: 600;
+    
+    opacity: 0;
+    transform: translateY(-250%);
+  }
+  
+  &.contact p {
+    margin: $contact-margin;
+  }
+  
+  &.contact a {
+    display: block;
+    margin: $contact-margin;
+
+    &::after { display: none!important; }
+  }
+
+  &.badrequest {
+    height: calc(100vh - 220px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    a { font-weight: 600; }
+    img { width: 30rem; }
+  }
+}
+
+.text-about,
+.text-takeout {
+  max-width: 45%;
+  padding-left: 1.5rem;
+  padding-right: 3rem;
+
+  h2, p {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+}
+
+.img-about,
+.img-takeout {
+  width: 600px;
+  min-width: 350px;
+  overflow: hidden;
+}
+
+.img-about img,
+.img-takeout img {
+  display: block;
+  width: 100%;
+  margin: auto;
+  scale: 1.1;
+  transition: scale 1s ease;
+}

@@ -1,0 +1,47 @@
+//* Typos
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;600;700;800&display=swap');
+
+
+
+//* Variables *\\
+//*** COLORS ***\\
+  $blue: #6050dc;
+  $secondary-blue: #2F44E6;
+  $yellow: #FFFA70;
+  $secondary-yellow: #FFFC99;
+  $green: #22442F;
+  $green: #2A502D;
+  $secondary-green: #A0CFB2;
+  $secondary-black: #34403A;
+  $textcolor: black;
+  // $textcolor: white;
+
+//*** BORDERS ***\\
+  $border: solid 1px white;
+  $border1: solid 1px black;
+  $border2: solid 1px red;
+  $border3: solid 1px $blue;
+
+//*** SIZES & SPACING ***\\
+  $section-width: 1320px;
+  $section-padding: 150px 0;
+  $contact-margin: 40px 0;
+
+//*** FONTS ***\\
+  $primary-font: 'Work Sans', sans-serif;
+  // $primary-font: 'Montserrat', sans-serif;
+
+
+
+//* Mixins *\\
+@mixin flexMid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+//* Fonctions *\\
+// $font-size: ;

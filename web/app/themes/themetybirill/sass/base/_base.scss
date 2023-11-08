@@ -1,0 +1,95 @@
+body {
+  background-color: $blue;
+  // background-color: $green;
+  overflow-x: hidden;
+  // cursor: url(https://cur.cursors-4u.net/food/foo-5/foo441.cur), pointer;
+}
+
+html { scroll-behavior: smooth; }
+
+::-moz-selection { /* Code for Firefox */
+  color: #34403A;
+  background: $secondary-yellow;
+}
+
+::selection {
+  color: #34403A;
+  background: $secondary-yellow;
+}
+
+h2 {
+  font-family: $primary-font;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  line-height: 1.4rem;
+  font-weight: 600;
+  // color: $textcolor;
+  // color: white;
+  text-transform: uppercase;
+}
+
+p, a {
+  font-family: $primary-font;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  letter-spacing: 1px;
+  color: $textcolor;
+  // color: white;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -.8rem;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background-color: #000;
+    transition: width .5s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+a.propaganda {
+  position: relative;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: none;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background-color: #000;
+    transition: width .5s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+#wpadminbar a::after { width: 0; }
+

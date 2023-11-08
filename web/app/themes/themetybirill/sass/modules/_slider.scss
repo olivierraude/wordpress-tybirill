@@ -1,0 +1,48 @@
+.container-slider {
+  @include flexMid;
+  width: 100%;
+}
+
+.swipper-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white!important;
+  // color: black!important;
+
+  &:hover::after { color: $secondary-yellow; transition: .4s!important; }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "➸";
+  font-size: 6rem;
+}
+
+.swiper-button-next::after {
+  margin-right: 2.5rem;
+}
+
+.swiper-button-prev::after {
+  margin-left: 2.5rem;
+  transform: rotate(180deg);
+}
+
+// .swiper-button-prev, .swiper-button-next {
+//         background-repeat: no-repeat;
+//         &:after {
+//             content:'';
+//         }
+//     }
+//     .swiper-button-prev {
+//         background-image: url(../images/arrow-left.png);    
+//     }
+//     .swiper-button-next {
+//         background-image: url(../images/arrow-right.png);
+//     }
+

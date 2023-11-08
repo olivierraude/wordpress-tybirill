@@ -1,0 +1,78 @@
+.visually-hidden  {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.color-picker {
+  fieldset {
+    border: 0;
+    display: flex;
+    // margin: auto;
+    margin-left: .5rem;
+    border-radius: 0 0 1rem 1rem;
+    padding: .5rem 1rem;
+    gap: 1rem;
+    width: fit-content;
+    background: white;
+    background: hsla(0, 100%, 100%, .3);
+    transition: .4s;
+    
+    &:hover {background: hsla(0, 100%, 100%, 1);}
+  }
+
+  input[type="radio"] {
+    appearance: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;  
+    outline-offset: 1px;
+    cursor: pointer;
+
+    &#blue { 
+      outline: 1px solid ($blue);
+      &:checked { background-color: $blue; }
+    }
+    &#green { 
+      outline: 1px solid ($green);
+      &:checked { background-color: $green; }
+    }
+  }
+}
+
+:root:has(#blue:checked) {
+  body {
+    background-color: $blue;
+    transition: .4s;
+    // h2, p , a { color: $textcolor; }
+  }
+}
+
+:root:has(#green:checked) {
+  body {
+    background-color: $green;
+    transition: .4s;
+
+      h2, p , a { color: white;
+      &::after { background-color: white; }}
+
+      nav {
+        background-color: $secondary-yellow;
+
+        .nav ul li a,
+        .footer-nav a {
+          color: $textcolor!important;
+
+          &:hover { color: $secondary-green!important; color: $blue!important; }
+        }
+      } 
+    }
+
+    .active:hover .line {
+      background: $blue;
+    }
+  }

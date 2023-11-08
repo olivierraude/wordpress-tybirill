@@ -1,0 +1,250 @@
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+
+/* Large devices (laptops/desktops, 992px and down) */
+@media only screen and (max-width: 992px) {
+  .nav-toggler {
+    top: 5.5rem !important;
+  }
+
+  div.pizza {
+    left: 0rem;
+    top: -22rem;
+
+    // border: solid 1px white;
+    img {
+      width: 14rem;
+    }
+  }
+
+  nav { 
+    padding: 0;
+
+    .nav,
+    .footer-nav {
+      width: 100%;
+      // padding: 0;
+
+      // border: solid 1px $blue;
+    }
+    
+    .nav {
+      padding: 10rem 0 2rem 0;
+      
+      ul {
+        width: 100%;
+        padding-left: 2.5rem !important;
+        line-height: 5.5rem; 
+        
+        
+        li a {
+          font-size: 4rem;
+        }
+      }
+    }
+    
+    .logo-nav {
+      right: 3rem;
+    }
+    
+    .footer-nav {
+      padding: 0;
+
+      a {
+        padding-left: 2.5rem;
+      }
+    }
+  }
+
+  section {
+    width: 95%;
+    padding: 75px 0;
+  
+    &:first-of-type {
+        padding: 25px 0 0 0!important;
+    }
+  }
+
+  .container {
+    &.logo {
+      @include flexMid;
+      
+      img {
+        width: 20rem;
+      }
+    }
+
+    &.about {
+      // align-items: flex-end;
+      align-items: flex-start;
+      
+      img {
+        margin: 1.5rem 0;
+      }
+    }
+
+    &.menu {
+      padding: 3rem 0;
+    }
+
+    .text-about,
+    .text-takeout {
+      // max-width: 95%;
+      padding: 0 1.5rem 0 0;
+      // text-align: justify;
+      h2, p {
+        opacity: 1!important;
+        transform: translateX(0%);
+      }
+    }
+    &-marquee {
+      display: none;
+    }
+  }
+}
+
+
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
+  .nav-toggler {
+      top: 3.5rem !important;
+      right: 1rem !important;
+  }
+
+  div.pizza {
+    left: 1rem;
+    top: -12rem;
+
+    // border: solid 1px white;
+    img {
+      width: 16rem;
+    }
+  }
+
+  nav { 
+    padding: 0;
+
+    .nav,
+    .footer-nav {
+      width: 100%;
+      // padding: 0;
+
+      // border: solid 1px $blue;
+    }
+    
+    .nav {
+      padding: 10rem 0 2rem 0;
+      
+      ul {
+        width: 100%;
+        padding-left: 1.5rem !important;
+        line-height: 4rem; 
+        
+        
+        li a {
+          font-size: 3rem;
+        }
+      }
+    }
+    
+    .footer-nav {
+      padding: 0;
+
+      a {
+        padding-left: 1.5rem;
+      }
+    }
+  }
+
+  section {
+    width: 95%;
+    padding: 50px 0;
+  
+    &:first-of-type {
+        padding: 25px 0 0 0!important;
+    }
+
+    .container {
+      &.logo {
+        @include flexMid;
+        
+        img {
+          width: 20rem;
+        }
+      }
+
+      &.menu {
+        padding: 5rem 0 !important;
+      }
+
+      &.about,
+      &.takeout {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .text-about,
+      .text-takeout {
+        max-width: 100%;
+        padding: 1.5rem 0 1.5rem 0;
+        text-align: justify;
+      }
+
+      .img-about,
+      .img-takeout {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  // .nav-toggler {
+  //   top: -3rem !important;
+  // }
+
+  div.pizza {
+    display: none;
+  }
+
+  nav { 
+
+    .nav {
+      // padding: 10rem 0 2rem 0;
+      
+      ul {
+        padding-left: 1rem !important;
+        line-height: 4rem!important; 
+        
+        li a {
+          font-size: 3rem!important;
+        }
+        
+        &:last-child li a { 
+          font-size: 1.5rem!important;
+        }
+      }
+    }
+
+    .logo-nav {
+      width: 20%;
+      right: 1rem;
+    }
+  }
+
+  .text-about,
+  .text-takeout {
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .menu a {
+    line-height: 2.2rem;
+  }
+}
