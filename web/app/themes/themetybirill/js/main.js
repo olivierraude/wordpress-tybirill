@@ -1,5 +1,7 @@
-console.log('It\'s work dude!');
+import itsChrome from "./itsChrome.js";
+import gsaPizza from "./gsaPizza.js";
 
+console.log('It\'s work dude!');
 
 /** LOCOMOTIVE SCROLL */
 
@@ -9,14 +11,20 @@ console.log('It\'s work dude!');
 // });
 
 
-const colorThemes = document.querySelectorAll('[name="theme"]') 
-      burgerButton = document.querySelector('.nav-toggler')
-      body = document.querySelector('body')
-      navigation = document.querySelector('nav')
-      pizza = document.querySelector('.pizza')
-      navLink = document.querySelectorAll('nav a')
+const colorThemes = document.querySelectorAll('[name="theme"]'), 
+      burgerButton = document.querySelector('.nav-toggler'),
+      body = document.querySelector('body'),
+      navigation = document.querySelector('nav'),
+      navLink = document.querySelectorAll('nav a'),
+      pizza = document.querySelector('.pizza'),
       footerLink = document.querySelector('.footer-nav a') 
-
+      
+// const itsChrome = () => {
+//   console.log(colorPicker)
+//   if (navigator.userAgent.indexOf("Chrome") != -1) {
+//     colorPicker.style.display = "flex";
+//   }
+// }
 
 /** LOCALSTORAGE FOR THEME **/
 /* réf: https://www.youtube.com/watch?v=fyuao3G-2qg */
@@ -75,8 +83,8 @@ function revertTween(tween){
 /** ANIMATION DES IMAGES */
 
 const imgs = Array.prototype.slice.call(document.querySelectorAll('img')),
-      logo = document.querySelector('.logo')
-      marginTop = document.querySelector('body').clientHeight - window.innerHeight
+      logo = document.querySelector('.logo'),
+      marginTop = document.querySelector('body').clientHeight - window.innerHeight,
       arrayImg = imgs.shift();
 
 // console.log(logo)
@@ -135,84 +143,67 @@ window.addEventListener('DOMContentLoaded', () => {
   // console.log(arrayImg)
   logo.style.opacity = 1
   logo.style.scale = 1
+
+  itsChrome
+  gsaPizza
 })
 
 
 //** GSap */
 /** ANIMATION DES TEXTES */
+  gsap.registerPlugin(ScrollTrigger);
 
-gsap.registerPlugin(ScrollTrigger)
+  let mm = gsap.matchMedia();
 
-let mm = gsap.matchMedia();
+  mm.add("(min-width:992px)", () => {
 
-mm.add("(min-width:992px)", () => {
+    gsap.to(
+      ".text-about h2, .text-about p", {
+      x: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.about',
+        // markers: true,
+        start: 'top 730px',
+        end: 'top 280px',
+        scrub: true,
+      }
+    });
 
-  gsap.to( 
-    ".text-about h2, .text-about p", { 
-    x: 0, 
-    opacity: 1, 
+    gsap.to(
+      ".text-takeout h2, .text-takeout p", {
+      x: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.takeout',
+        // markers: true,
+        start: 'top 600px',
+        end: 'center center',
+        scrub: true,
+      }
+    });
+
+  });
+
+
+  gsap.to(
+    ".menu a", {
+    y: 0,
+    opacity: 1,
     duration: 1,
-    stagger: .2,
+    // stagger: .2,
     scrollTrigger: {
-    trigger: '.about',
-    // markers: true,
-    start: 'top 730px',
-    end: 'top 280px',
-    scrub: true,
+      trigger: '.container.menu',
+      // markers: true,
+      start: 'top 750px',
+      end: 'bottom 550px',
+      scrub: true,
     }
   });
 
-  gsap.to( 
-    ".text-takeout h2, .text-takeout p", { 
-    x: 0, 
-    opacity: 1, 
-    duration: 1,
-    stagger: .2,
-    scrollTrigger: {
-    trigger: '.takeout',
-    // markers: true,
-    start: 'top 600px',
-    end: 'center center',
-    scrub: true,
-    }
-  });
 
-})
-
-
-gsap.to( 
-  ".menu a", { 
-  y: 0, 
-  opacity: 1, 
-  duration: 1,
-  // stagger: .2,
-  scrollTrigger: {
-  trigger: '.container.menu',
-  // markers: true,
-  start: 'top 750px',
-  end: 'bottom 550px',
-  scrub: true,
-  }
-});
-
-
-/** ANIMATION DE LA PIZZA */
-
-pizza.addEventListener('click', () => {
-  pizza.style.display = "none"
-})
-
-
-gsap.to( 
-  ".pizza", { 
-  scrollTrigger: {
-  trigger: 'body',
-  start: 'top bottom',
-  end: 'bottom top',
-  scrub: true,
-  // markers: true,
-},
-rotate: 1080,
-ease: 'none'
-});
 
