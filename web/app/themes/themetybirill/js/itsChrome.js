@@ -1,4 +1,3 @@
-// import { colorPicker } from "./colorPicker";
 const colorPicker = document.querySelector('.color-picker fieldset')
 
 const itsChrome = () => {

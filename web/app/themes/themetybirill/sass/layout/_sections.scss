@@ -6,6 +6,9 @@ section {
   &:first-of-type {
       padding: 50px 0 0 0!important;
   }
+  &:last-of-type {
+      padding: 75px 0 75px!important;
+  }
 }
 
 //TODO -> Test nesting BEM container-logo / container-about ...
@@ -39,7 +42,7 @@ section {
   }
   
   &.contact {
-    margin: 80px 0;
+    margin: 40px 0;
   }
 
   &.menu a {
