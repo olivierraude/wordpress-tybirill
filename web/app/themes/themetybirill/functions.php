@@ -29,18 +29,8 @@ function montheme_register_assets()
   wp_register_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', [], false, true);
   wp_register_script('monscript', get_stylesheet_directory_uri() . '/js/main.js', [], false, true);
   wp_register_script('monscript', get_stylesheet_directory_uri() . '/dist/js/main.min.js', [], false, true);
-  add_filter("script_loader_tag", "add_module_to_my_script", 10, 3);
-  function add_module_to_my_script(
-    $tag,
-    $handle,
-    $src
-  ) {
-    if ("monscript" === $handle) {
-      $tag = '<script type="module" src="' . esc_url($src) . '"></script>';
-    }
 
-    return $tag;
-  }
+
 
 
   // wp_enqueue_style('locomotiveCSS');
@@ -87,6 +77,19 @@ remove_filter('acf_the_content', 'wpautop');
 
 add_filter('wp-title', 'montheme_title');
 add_filter("use_block_editor_for_post_type", "disable_gutenberg_editor");
+
+add_filter("script_loader_tag", "add_module_to_my_script", 10, 3);
+function add_module_to_my_script(
+  $tag,
+  $handle,
+  $src
+) {
+  if ("monscript" === $handle) {
+    $tag = '<script type="module" src="' . esc_url($src) . '"></script>';
+  }
+
+  return $tag;
+}
 
 require_once('options/pizzeria.php');
 
