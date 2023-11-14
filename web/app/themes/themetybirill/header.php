@@ -22,7 +22,7 @@
       ?>
 
       <ul>
-        <li><a href="#">Certificat cadeau -> The ultimate</a></li>
+        <li><a href="#">Certificat cadeau</a></li>
       </ul>
     </div>
     <div class="logo-nav"><img src="./app/uploads/2023/10/logo-nav.png" alt="Pizzeria - Ferme Ty Birill"></div>
