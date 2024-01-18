@@ -132,7 +132,7 @@
 <section>
 
   <div id="contact" class="container contact">
-    <h2>HORAIRES</h2>
+    <h2>HORAIRES (test)</h2>
     <p><?= get_option('pizzeria_schedule') ?></p>
   </div>
   <div class="container contact">
