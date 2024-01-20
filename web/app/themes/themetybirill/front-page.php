@@ -19,7 +19,7 @@
 
   <div class="container logo">
     <h1>
-      <img src="./app/uploads/2023/10/logo.png" class="" alt="Pizzeria - Ferme Ty Birill">
+      <img src="./app/uploads/2024/01/logo-500.png" class="" alt="Pizzeria - Ferme Ty Birill">
     </h1>
   </div>
 
