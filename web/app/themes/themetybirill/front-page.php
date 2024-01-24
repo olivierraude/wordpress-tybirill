@@ -98,7 +98,7 @@
   <div class="container menu">
     <h2>MENU</h2>
     <br />
-    <a href="#"><?= get_field('texte_lien_menu') ?></a>
+    <a href="<?= get_field('fichier_menu') ?>"><?= get_field('texte_lien_menu') ?></a>
   </div>
 
 </section>
