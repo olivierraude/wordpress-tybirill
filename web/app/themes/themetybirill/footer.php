@@ -1,7 +1,7 @@
   <?php wp_footer() ?>
 
   <div class="footer">
-    <p>© 2023 Ferme Ty Birill</p>
+    <p>© 2024 Ferme Ty Birill</p>
     <p>Conception <a href="https://www.olivierraude.com" target="_blank" class="propaganda">O.Raude</a></p>
   </div>
 

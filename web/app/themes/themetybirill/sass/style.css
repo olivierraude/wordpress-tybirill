@@ -496,11 +496,14 @@ section {
   padding: 150px 0;
   margin: auto;
 }
+section #audio {
+  padding-top: 50px;
+}
 section:first-of-type {
   padding: 50px 0 0 0 !important;
 }
 section:last-of-type {
-  padding: 75px 0 75px !important;
+  padding: 0 0 75px !important;
 }
 
 .container {
@@ -530,6 +533,21 @@ section:last-of-type {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+.container.audio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.container.audio audio {
+  margin-top: 50px;
 }
 .container.menu, .container.contact {
   text-align: center;
@@ -937,10 +955,10 @@ div.pizza.active {
   background-color: #6050dc;
 }
 .color-picker input[type=radio]#green {
-  outline: 1px solid #2A502D;
+  outline: 1px solid #768767;
 }
 .color-picker input[type=radio]#green:checked {
-  background-color: #2A502D;
+  background-color: #768767;
 }
 
 :root:has(#blue:checked) body {
@@ -950,7 +968,7 @@ div.pizza.active {
 }
 
 :root:has(#green:checked) body {
-  background-color: #2A502D;
+  background-color: #768767;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }

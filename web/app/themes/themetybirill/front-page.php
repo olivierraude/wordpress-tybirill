@@ -11,7 +11,7 @@
 </form>
 
 <div class="pizza">
-  <img src="./app/uploads/2023/10/pizza.png" alt="Pizzeria - Ferme Ty Birill">
+  <img src="./app/uploads/2024/01/pizza.png" alt="Pizzeria - Ferme Ty Birill">
 </div>
 
 <!-- <section id="smooth-content"> -->
@@ -19,7 +19,7 @@
 
   <div class="container logo">
     <h1>
-      <img src="./app/uploads/2024/01/logo-500.png" class="" alt="Pizzeria - Ferme Ty Birill">
+      <img src="./app/uploads/2024/01/logo-500_3.png" class="" alt="Pizzeria - Ferme Ty Birill">
     </h1>
   </div>
 
@@ -128,6 +128,25 @@
     SLOW FOOD &#10168 GOOD FOOD - CIRCUIT COURT &#10168 INGRÉDIENTS DE LA FERME -
   </div>
 </div>
+
+<?php 
+  //var_dump(get_field('url_podcast'));
+  $url = (get_field('url_podcast'));
+  // var_dump($url);
+
+  if ($url != null) : ?>
+
+    <section id="audio">
+
+      <div class="container audio">
+      <h2>On parle de nous par ici</h2>
+        <audio controls id="player" src="<?= $url ?>">
+          Une petite phrase pour les vieux navigateurs qui ne connaissent pas la balise audio... (c'est pas obligatoire).
+        </audio>
+      </div>
+
+    </section>
+  <?php endif; ?>
 
 <section>
 
