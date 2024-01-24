@@ -165,6 +165,7 @@
   <div class="container contact">
     <h2>COURRIEL</h2>
     <a href="mailto#" target="_blank"><?= get_option('pizzeria_mail') ?></a>
+    <p>THIS IS A TEST ON BRANCH TEST_WIDGET!</p>
   </div>
 
 </section>
