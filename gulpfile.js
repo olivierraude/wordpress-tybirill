@@ -36,7 +36,7 @@ function scssTask() {
 
 // Script Task
 function scriptTask() {
-  return src(source + "js/**/*.js", { sourcemaps: true })
+  return src(source + "js/*.js", { sourcemaps: true })
     .pipe(uglify())
     .pipe(rename({ suffix: ".min" }))
     .pipe(dest(source + "dist/js/"));

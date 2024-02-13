@@ -77,9 +77,11 @@ section {
   
   &.contact a {
     display: block;
-    margin: $contact-margin;
+    width: fit-content;
+    margin: auto;
+    // margin: $contact-margin;
 
-    &::after { display: none!important; }
+    // &::after { display: none!important; }
   }
 
   &.badrequest {

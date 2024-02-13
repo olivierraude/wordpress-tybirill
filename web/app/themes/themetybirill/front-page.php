@@ -37,7 +37,7 @@
 
     <div class="img-about">
       <?php while (have_posts()) : the_post(); ?>
-        <img class="img" src="<?= get_field('image_a_propos') ?>" />
+        <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_a_propos'),['origin'])[0]; ?>" alt="<?= get_post_meta(get_field('image_a_propos'), '_wp_attachment_image_alt', TRUE) ?>" />
       <?php endwhile; ?>
     </div>
   </div>
@@ -98,7 +98,7 @@
   <div class="container menu">
     <h2>MENU</h2>
     <br />
-    <a href="<?= get_field('fichier_menu') ?>"><?= get_field('texte_lien_menu') ?></a>
+    <a class="menu" href="<?= get_field('fichier_menu') ?>"><?= get_field('texte_lien_menu') ?></a>
   </div>
 
 </section>
@@ -115,7 +115,7 @@
 
     <div class="img-takeout">
       <?php while (have_posts()) : the_post(); ?>
-        <img class="img" src="<?= get_field('image_pour_emporter') ?>" />
+      <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_pour_emporter'),['origin'])[0]; ?>" alt="<?= get_post_meta(get_field('image_pour_emporter'), '_wp_attachment_image_alt', TRUE) ?>" />
       <?php endwhile; ?>
     </div>
   </div>
@@ -156,15 +156,15 @@
   </div>
   <div class="container contact">
     <h2>ADRESSE</h2>
-    <a href="https://www.google.com/maps/place/FERME+TY+BIRILL/@48.6646275,-4.0794388,17z/data=!3m1!4b1!4m6!3m5!1s0x4813e38471b53d53:0xdcf58cf2bd600b1!8m2!3d48.6646275!4d-4.0794388!16s%2Fg%2F11kppw1glf?authuser=0&hl=fr&entry=ttu" target="_blank"><?= get_option('pizzeria_address') ?></a>
+    <a class="underline" href="https://www.google.com/maps/place/FERME+TY+BIRILL/@48.6646275,-4.0794388,17z/data=!3m1!4b1!4m6!3m5!1s0x4813e38471b53d53:0xdcf58cf2bd600b1!8m2!3d48.6646275!4d-4.0794388!16s%2Fg%2F11kppw1glf?authuser=0&hl=fr&entry=ttu" target="_blank"><?= get_option('pizzeria_address') ?></a>
   </div>
   <div class="container contact">
     <h2>TÉLÉPHONE</h2>
-    <a href="tel:<?= str_replace(' ', '', get_option('pizzeria_phone')); ?>"><?= get_option('pizzeria_phone') ?></a>
+    <a class="underline" href="tel:<?= str_replace(' ', '', get_option('pizzeria_phone')); ?>"><?= get_option('pizzeria_phone') ?></a>
   </div>
   <div class="container contact">
     <h2>COURRIEL</h2>
-    <a href="mailto#" target="_blank"><?= get_option('pizzeria_mail') ?></a>
+    <a class="underline" href="mailto#" target="_blank"><?= get_option('pizzeria_mail') ?></a>
     <p>THIS IS A TEST ON BRANCH TEST_WIDGET!</p>
   </div>
 

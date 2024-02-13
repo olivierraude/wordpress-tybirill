@@ -20,18 +20,15 @@ function montheme_register_assets()
 {
   // wp_register_style('locomotiveCSS', get_stylesheet_directory_uri() . '/sass/locomotive-scroll.css');
   wp_register_style('swiperCSS', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css');
-  wp_register_style('monstyle', get_stylesheet_directory_uri() . '/sass/style.css');
-  // wp_register_style('monstyle', get_stylesheet_directory_uri() . '/dist/css/style.min.css');
+  // wp_register_style('monstyle', get_stylesheet_directory_uri() . '/sass/style.css');
+  wp_register_style('monstyle', get_stylesheet_directory_uri() . '/dist/css/style.min.css');
 
   // wp_register_script('locomotiveScroll', get_stylesheet_directory_uri() . '/js/locomotive-scroll.min.js', [], false, true);
   // wp_register_script('swiperJS', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', [], false, true);
   wp_register_script('scrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', [], false, true);
   wp_register_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', [], false, true);
   wp_register_script('monscript', get_stylesheet_directory_uri() . '/js/main.js', [], false, true);
-  wp_register_script('monscript', get_stylesheet_directory_uri() . '/dist/js/main.min.js', [], false, true);
-
-
-
+  // wp_register_script('monscript', get_stylesheet_directory_uri() . '/dist/js/main.min.js', [], false, true);
 
   // wp_enqueue_style('locomotiveCSS');
   wp_enqueue_style('swiperCSS');

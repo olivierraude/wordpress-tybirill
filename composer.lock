@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b3b78cf8a4f79e6949d1fbac7504c6a",
+    "content-hash": "1dbaabd65b56f6f0ef5f5bd3477cf97e",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -1625,6 +1625,24 @@
             "homepage": "https://wordpress.org/plugins/litespeed-cache/"
         },
         {
+            "name": "wpackagist-plugin/seo-by-rank-math",
+            "version": "1.0.212.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/seo-by-rank-math/",
+                "reference": "tags/1.0.212.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/seo-by-rank-math.1.0.212.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/seo-by-rank-math/"
+        },
+        {
             "name": "wpackagist-plugin/wordfence",
             "version": "7.10.6",
             "source": {
@@ -1695,71 +1713,6 @@
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/twentytwentythree/"
-        },
-        {
-            "name": "yoast/wordpress-seo",
-            "version": "20.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Yoast-dist/wordpress-seo.git",
-                "reference": "721956362ebbf823d2608dbc62a3fa76e11ca763"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Yoast-dist/wordpress-seo/zipball/721956362ebbf823d2608dbc62a3fa76e11ca763",
-                "reference": "721956362ebbf823d2608dbc62a3fa76e11ca763",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "^1.12 || ^2.0",
-                "php": "^7.2.5 || ^8.0"
-            },
-            "require-dev": {
-                "guzzlehttp/guzzle": "6.5.8",
-                "humbug/php-scoper": "^0.13.4",
-                "league/oauth2-client": "2.6.1",
-                "psr/container": "1.0.0",
-                "psr/log": "^1.0",
-                "symfony/config": "^3.4",
-                "symfony/dependency-injection": "^3.4",
-                "wordproof/wordpress-sdk": "1.3.2",
-                "yoast/wp-test-utils": "^1.1.1",
-                "yoast/yoastcs": "^2.3.1"
-            },
-            "type": "wordpress-plugin",
-            "autoload": {
-                "classmap": [
-                    "admin/",
-                    "inc/",
-                    "vendor_prefixed/",
-                    "src/",
-                    "lib/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Team Yoast",
-                    "email": "support@yoast.com",
-                    "homepage": "https://yoa.st/1--"
-                }
-            ],
-            "description": "Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.",
-            "homepage": "https://yoa.st/1ui",
-            "keywords": [
-                "seo",
-                "wordpress"
-            ],
-            "support": {
-                "forum": "https://wordpress.org/support/plugin/wordpress-seo",
-                "issues": "https://github.com/Yoast/wordpress-seo/issues",
-                "source": "https://github.com/Yoast/wordpress-seo",
-                "wiki": "https://github.com/Yoast/wordpress-seo/wiki"
-            },
-            "time": "2023-08-08T08:11:09+00:00"
         }
     ],
     "packages-dev": [
@@ -2628,5 +2581,5 @@
         "php": ">=8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
