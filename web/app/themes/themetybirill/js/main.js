@@ -5,9 +5,14 @@ import gsaPizza from "./gsaPizza.js";
 import gsapText from "./gsapText.js";
 import gsapImage from "./gsapImage.js";
 
-console.log('It\'s work dude!');
+
+// console.log('It\'s work dude!');
+// console.log(logo);
 
 /** LOADING */
+
+// const logo = document.querySelector('.logo');
+
 window.addEventListener('DOMContentLoaded', () => {
   // console.log(arrayImg)
   logo.style.opacity = 1

@@ -24,6 +24,7 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.1",
     "gulp-livereload": "^4.0.2",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
@@ -38,6 +39,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "gulp-eslint": "^6.0.0",
     "locomotive-scroll": "^4.1.4"
   }
 }

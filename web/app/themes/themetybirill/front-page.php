@@ -37,7 +37,7 @@
 
     <div class="img-about">
       <?php while (have_posts()) : the_post(); ?>
-        <img class="img" src="<?= get_field('image_a_propos') ?>" />
+        <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_a_propos'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_a_propos'), '_wp_attachment_image_alt', TRUE); ?>" />
       <?php endwhile; ?>
     </div>
   </div>
@@ -51,37 +51,37 @@
 
       <div class="img-about swiper-slide">
         <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= get_field('image_slider_1') ?>" />
+          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_1'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_1'), '_wp_attachment_image_alt', TRUE); ?>" />
         <?php endwhile; ?>
       </div>
 
       <div class="img-about swiper-slide">
         <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= get_field('image_slider_2') ?>" />
+          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_2'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_2'), '_wp_attachment_image_alt', TRUE); ?>" />
         <?php endwhile; ?>
       </div>
 
       <div class="img-about swiper-slide">
         <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= get_field('image_slider_3') ?>" />
+          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_3'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_3'), '_wp_attachment_image_alt', TRUE); ?>" />
         <?php endwhile; ?>
       </div>
 
       <div class="img-about swiper-slide">
         <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= get_field('image_slider_4') ?>" />
+          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_4'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_4'), '_wp_attachment_image_alt', TRUE); ?>" />
         <?php endwhile; ?>
       </div>
 
       <div class="img-about swiper-slide">
         <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= get_field('image_slider_5') ?>" />
+          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_5'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_5'), '_wp_attachment_image_alt', TRUE); ?>" />
         <?php endwhile; ?>
       </div>
 
       <div class="img-about swiper-slide">
         <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= get_field('image_slider_6') ?>" />
+          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_6'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_6'), '_wp_attachment_image_alt', TRUE); ?>" />
         <?php endwhile; ?>
       </div>
 
@@ -115,7 +115,7 @@
 
     <div class="img-takeout">
       <?php while (have_posts()) : the_post(); ?>
-        <img class="img" src="<?= get_field('image_pour_emporter') ?>" />
+        <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_pour_emporter'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_pour_emporter'), '_wp_attachment_image_alt', TRUE); ?>" />
       <?php endwhile; ?>
     </div>
   </div>

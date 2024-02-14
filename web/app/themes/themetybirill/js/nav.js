@@ -38,4 +38,5 @@ const nav = () => {
   }
 };
 
+console.log('Hello World!')
 export default nav()

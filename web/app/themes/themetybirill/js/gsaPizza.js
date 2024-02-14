@@ -1,10 +1,10 @@
-const pizza = document.querySelector('.pizza')
+const pizz = document.querySelector('.pizza')
 
 /** ANIMATION DE LA PIZZA */
 const gsaPizza = () => {
 
-  pizza.addEventListener('click', () => {
-    pizza.style.display = "none";
+  pizz.addEventListener('click', () => {
+    pizz.style.display = "none";
   });
 
 

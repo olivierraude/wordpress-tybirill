@@ -15,6 +15,7 @@
   const cssnano = require("cssnano");
   const rename = require("gulp-rename");
   const uglify = require("gulp-uglify");
+  const concat = require("gulp-concat");
   // const tercer = require("gulp-tercer");
   const browserSync = require("browser-sync").create();
 
@@ -36,10 +37,20 @@ function scssTask() {
 
 // Script Task
 function scriptTask() {
-  return src(source + "js/**/*.js", { sourcemaps: true })
+  return src([
+    source + "js/main.js",
+    source + "js/itsChrome.js",
+    source + "js/applyTheme.js",
+    source + "js/nav.js",
+    source + "js/gsaPizza.js",
+    source + "js/gsapText.js",
+    source + "js/gsapImage.js",
+  ], { sourcemaps: true })
+    // source + "js/*.js", { sourcemaps: true }
     .pipe(uglify())
+    .pipe(concat('all.js'))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(dest(source + "dist/js/"));
+    .pipe(dest(source + "dist/js/", { sourcemaps: "." }));
 };
 
 // Images Task
