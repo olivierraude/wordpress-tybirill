@@ -3,9 +3,9 @@
 <form class="color-picker" action="">
   <fieldset>
     <legend class="visually-hidden">Pick a color</legend>
-    <label class="visually-hidden" for="theme">Majorelle</label>
+    <label class="visually-hidden" for="blue">Majorelle</label>
     <input type="radio" name="theme" id="blue" checked>
-    <label class="visually-hidden" for="theme">Ajonc</label>
+    <label class="visually-hidden" for="green">Ajonc</label>
     <input type="radio" name="theme" id="green">
   </fieldset>
 </form>
