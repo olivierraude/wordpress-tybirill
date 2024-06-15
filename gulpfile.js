@@ -13,10 +13,11 @@
   const postcss = require("gulp-postcss");
   const autoprefixer = require("gulp-autoprefixer");
   const cssnano = require("cssnano");
+  const sourcemaps = require('gulp-sourcemaps');
   const rename = require("gulp-rename");
   const uglify = require("gulp-uglify");
+  const clean = require("gulp-strip-import-export");
   const concat = require("gulp-concat");
-  // const tercer = require("gulp-tercer");
   const browserSync = require("browser-sync").create();
 
 // Sass Task
@@ -37,20 +38,14 @@ function scssTask() {
 
 // Script Task
 function scriptTask() {
-  return src([
-    source + "js/main.js",
-    source + "js/itsChrome.js",
-    source + "js/applyTheme.js",
-    source + "js/nav.js",
-    source + "js/gsaPizza.js",
-    source + "js/gsapText.js",
-    source + "js/gsapImage.js",
-  ], { sourcemaps: true })
-    // source + "js/*.js", { sourcemaps: true }
-    .pipe(uglify())
+  return src(source + "js/**/*js", { sourcemaps: true })
+    .pipe(sourcemaps.init())
+    .pipe(clean())
     .pipe(concat('all.js'))
+    .pipe(uglify())
     .pipe(rename({ suffix: ".min" }))
-    .pipe(dest(source + "dist/js/", { sourcemaps: "." }));
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest(source + "dist/js/"));
 };
 
 // Images Task
@@ -72,7 +67,7 @@ function browsersyncReload(cb) {
 function watchTask() {
   watch(source + "**/*php", browsersyncReload);
   watch(
-    [source + "sass/**/*scss", source + "js/*js"],
+    [source + "sass/**/*scss", source + "js/**/*js"],
     series(scssTask, scriptTask, browsersyncReload)
   );
 }

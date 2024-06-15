@@ -1,6 +1,7 @@
-const gsapText = () => {
+/** ANIMATION DES TEXTES */
 
-  /** ANIMATION DES TEXTES */
+export function gsapText() {
+
   gsap.registerPlugin(ScrollTrigger);
 
   let mm = gsap.matchMedia();
@@ -55,5 +56,3 @@ const gsapText = () => {
     }
   });
 };
-
-export default gsapText()

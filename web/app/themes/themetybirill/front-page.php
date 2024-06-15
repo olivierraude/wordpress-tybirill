@@ -87,6 +87,8 @@
 
     </div>
 
+    <!-- <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal">
+      <span class="swiper-pagination-progressbar-fill" style="transform: translate3d(0px, 0px, 0px) scaleX(0.25) scaleY(1); transition-duration: 500ms;"></span></div> -->
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>

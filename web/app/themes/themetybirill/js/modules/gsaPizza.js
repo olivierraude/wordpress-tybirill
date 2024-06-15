@@ -1,7 +1,8 @@
-const pizz = document.querySelector('.pizza')
-
 /** ANIMATION DE LA PIZZA */
-const gsaPizza = () => {
+
+export function gsaPizza() {
+  
+  const pizz = document.querySelector('.pizza')
 
   pizz.addEventListener('click', () => {
     pizz.style.display = "none";
@@ -21,5 +22,3 @@ const gsaPizza = () => {
     ease: 'none'
   });
 };
-
-export default gsaPizza()

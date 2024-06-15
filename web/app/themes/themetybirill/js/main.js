@@ -1,9 +1,10 @@
-import itsChrome from "./itsChrome.js";
-import applyTheme from "./applyTheme.js";
-import nav from "./nav.js";
-import gsaPizza from "./gsaPizza.js";
-import gsapText from "./gsapText.js";
-import gsapImage from "./gsapImage.js";
+import {itsChrome} from './modules/itsChrome.js';
+import {applyTheme} from './modules/applyTheme.js';
+import {nav} from './modules/nav.js';
+import {gsaPizza} from './modules/gsaPizza.js';
+import {gsapText} from './modules/gsapText.js';
+import {gsapImage} from './modules/gsapImage.js';
+import {swiper} from './modules/swiper.js';
 
 
 // console.log('It\'s work dude!');
@@ -18,10 +19,12 @@ window.addEventListener('DOMContentLoaded', () => {
   logo.style.opacity = 1
   logo.style.scale = 1
 
-  itsChrome
-  applyTheme
-  nav
-  gsaPizza
-  gsapText
-  gsapImage
-})
+});
+
+itsChrome()
+applyTheme()
+nav()
+// swiper()
+gsaPizza()
+gsapText()
+gsapImage()

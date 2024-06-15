@@ -19,16 +19,17 @@ function montheme_supports()
 function montheme_register_assets()
 {
   // wp_register_style('locomotiveCSS', get_stylesheet_directory_uri() . '/sass/locomotive-scroll.css');
-  wp_register_style('swiperCSS', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css');
+  // wp_register_style('swiperCSS', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css');
+  wp_register_style('swiperCSS', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css');
   // wp_register_style('monstyle', get_stylesheet_directory_uri() . '/sass/style.css');
   wp_register_style('monstyle', get_stylesheet_directory_uri() . '/dist/css/style.min.css');
 
   // wp_register_script('locomotiveScroll', get_stylesheet_directory_uri() . '/js/locomotive-scroll.min.js', [], false, true);
-  // wp_register_script('swiperJS', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', [], false, true);
+  wp_register_script('swiperJS', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js', [], false, true);
   wp_register_script('scrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', [], false, true);
   wp_register_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', [], false, true);
-  wp_register_script('monscript', get_stylesheet_directory_uri() . '/js/main.js', [], false, true);
-  // wp_register_script('monscript', get_stylesheet_directory_uri() . '/dist/js/all.min.js', [], false, true);
+  // wp_register_script('monscript', get_stylesheet_directory_uri() . '/js/main.js', [], false, true);
+  wp_register_script('monscript', get_stylesheet_directory_uri() . '/dist/js/all.min.js', [], false, true);
 
 
 
@@ -37,7 +38,7 @@ function montheme_register_assets()
   wp_enqueue_style('swiperCSS');
   wp_enqueue_style('monstyle');
 
-  // wp_enqueue_script('swiperJS');
+  wp_enqueue_script('swiperJS');
   // wp_enqueue_script('locomotiveScroll');
   wp_enqueue_script('gsap');
   wp_enqueue_script('scrollTrigger');
@@ -78,6 +79,7 @@ remove_filter('acf_the_content', 'wpautop');
 add_filter('wp-title', 'montheme_title');
 add_filter("use_block_editor_for_post_type", "disable_gutenberg_editor");
 
+// Ajout type=>module au script
 add_filter("script_loader_tag", "add_module_to_my_script", 10, 3);
 function add_module_to_my_script(
   $tag,

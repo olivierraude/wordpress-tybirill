@@ -1,7 +1,10 @@
-const gsapImage = () => {
-  /** ANIMATION DES IMAGES */
+/** ANIMATION DES IMAGES */
 
-  const imgs = Array.prototype.slice.call(document.querySelectorAll('img')), logo = document.querySelector('.logo'), marginTop = document.querySelector('body').clientHeight - window.innerHeight, arrayImg = imgs.shift();
+export function gsapImage() {
+
+  const imgs = Array.prototype.slice.call(document.querySelectorAll('img')), 
+        logo = document.querySelector('.logo'), 
+        marginTop = document.querySelector('body').clientHeight - window.innerHeight, arrayImg = imgs.shift();
 
   // console.log(logo)
   // console.log(marginTop)
@@ -30,7 +33,7 @@ const gsapImage = () => {
         entry.target.style.scale = 1;
       }
     });
-  }
+  };
 
 
   function handleIntersect(entries) {
@@ -43,7 +46,7 @@ const gsapImage = () => {
         entry.target.style.scale = 1.1;
       }
     });
-  }
+  };
 
 
   const logObserver = new IntersectionObserver(handleLogo, optionsLogo);
@@ -54,5 +57,3 @@ const gsapImage = () => {
     observer.observe(img);
   });
 };
-
-export default gsapImage()

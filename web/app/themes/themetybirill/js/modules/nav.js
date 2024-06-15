@@ -1,15 +1,14 @@
-// import { burgerButton, navLink, navigation, pizza, footerLink, body } from "./main.js";
+/** ANIMATION DE LA NAVIGATION */
 
-const burgerButton = document.querySelector('.nav-toggler'),
+export function nav() {
+
+  const burgerButton = document.querySelector('.nav-toggler'),
       body = document.querySelector('body'),
       navigation = document.querySelector('nav'),
       navLink = document.querySelectorAll('nav a'),
       pizza = document.querySelector('.pizza'),
-      footerLink = document.querySelector('.footer-nav a')
+      footerLink = document.querySelector('.footer-nav a');
 
-      
-/** ANIMATION DE LA NAVIGATION */
-const nav = () => {
   burgerButton.addEventListener('click', toggleNav);
   navLink.forEach((link) => { link.addEventListener('click', toggleNav); });
 
@@ -30,13 +29,10 @@ const nav = () => {
     });
 
     revertTween(tween);
-  }
+  };
 
   function revertTween(tween) {
     burgerButton.addEventListener('click', () => { tween.revert(); });
     navLink.forEach((link) => link.addEventListener('click', () => { tween.revert(link); }));
-  }
+  };
 };
-
-console.log('Hello World!')
-export default nav()
