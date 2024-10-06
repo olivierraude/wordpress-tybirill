@@ -94,5 +94,48 @@ function add_module_to_my_script(
 }
 
 require_once('options/pizzeria.php');
-
 PizzeriaMenuPage::register();
+
+
+
+//** SHORTCODES **//
+
+// Swiper Carousel \\
+/*
+function my_swiper() {
+
+	$images = get_field('images');
+	$videos = get_field('videos');
+
+	?>
+	<div class='container-slider swiper mySwiper' id='swiper-1'>
+		<div class='swiper-wrapper'>
+			<?php
+				foreach((array)$images as $image) {
+					if($image) {
+			?>
+						<div class='img-about swiper-slide'>
+							<img src="<?php echo $image; ?>">
+						</div>
+					
+			<?php }
+			} 	foreach((array)$videos as $video) {
+					if($video) {
+			?>
+						<div class='swiper-slide'>
+							<video controls><source src="<?php echo $video; ?>"/></video>
+						</div>
+					
+			<?php 	} 
+			}
+			?>
+		</div>
+    <div class='swiper-button-next'></div>
+    <div class='swiper-button-prev'></div>
+	</div>
+	<!-- <div class='swiper-pagination'></div> -->
+<?php
+}
+
+add_shortcode('swiper_carousel','my_swiper');
+*/
