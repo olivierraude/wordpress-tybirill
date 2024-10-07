@@ -44,57 +44,6 @@
 
 </section>
 
-<!-- <section id="gallery">
-
-  <div class="container-slider swiper mySwiper"> -->
-    <!-- <div class="swiper-wrapper">
-
-      <div class="img-about swiper-slide">
-        <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_1'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_1'), '_wp_attachment_image_alt', TRUE); ?>" />
-        <?php endwhile; ?>
-      </div>
-
-      <div class="img-about swiper-slide">
-        <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_2'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_2'), '_wp_attachment_image_alt', TRUE); ?>" />
-        <?php endwhile; ?>
-      </div>
-
-      <div class="img-about swiper-slide">
-        <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_3'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_3'), '_wp_attachment_image_alt', TRUE); ?>" />
-        <?php endwhile; ?>
-      </div>
-
-      <div class="img-about swiper-slide">
-        <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_4'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_4'), '_wp_attachment_image_alt', TRUE); ?>" />
-        <?php endwhile; ?>
-      </div>
-
-      <div class="img-about swiper-slide">
-        <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_5'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_5'), '_wp_attachment_image_alt', TRUE); ?>" />
-        <?php endwhile; ?>
-      </div>
-
-      <div class="img-about swiper-slide">
-        <?php while (have_posts()) : the_post(); ?>
-          <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_slider_6'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_slider_6'), '_wp_attachment_image_alt', TRUE); ?>" />
-        <?php endwhile; ?>
-      </div>
-
-    </div> -->
-
-    <!-- <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal">
-      <span class="swiper-pagination-progressbar-fill" style="transform: translate3d(0px, 0px, 0px) scaleX(0.25) scaleY(1); transition-duration: 500ms;"></span></div> -->
-    <!-- <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div> -->
-  <!-- </div>
-
-</section> -->
-
 <section id="gallery">
 
   <!-- <?= do_shortcode('[swiper_carousel]'); ?> -->
