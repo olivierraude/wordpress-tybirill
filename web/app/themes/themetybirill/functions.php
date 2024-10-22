@@ -18,13 +18,11 @@ function montheme_supports()
 
 function montheme_register_assets()
 {
-  // wp_register_style('locomotiveCSS', get_stylesheet_directory_uri() . '/sass/locomotive-scroll.css');
-  // wp_register_style('swiperCSS', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css');
   wp_register_style('swiperCSS', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css');
   // wp_register_style('monstyle', get_stylesheet_directory_uri() . '/sass/style.css');
   wp_register_style('monstyle', get_stylesheet_directory_uri() . '/dist/css/style.min.css');
-
-  // wp_register_script('locomotiveScroll', get_stylesheet_directory_uri() . '/js/locomotive-scroll.min.js', [], false, true);
+  
+  wp_register_script('lenis', 'https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js', false, true);
   wp_register_script('swiperJS', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js', [], false, true);
   wp_register_script('scrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', [], false, true);
   wp_register_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', [], false, true);
@@ -32,14 +30,11 @@ function montheme_register_assets()
   wp_register_script('monscript', get_stylesheet_directory_uri() . '/dist/js/all.min.js', [], false, true);
 
 
-
-
-  // wp_enqueue_style('locomotiveCSS');
   wp_enqueue_style('swiperCSS');
   wp_enqueue_style('monstyle');
 
+  wp_enqueue_style('lenis');
   wp_enqueue_script('swiperJS');
-  // wp_enqueue_script('locomotiveScroll');
   wp_enqueue_script('gsap');
   wp_enqueue_script('scrollTrigger');
   wp_enqueue_script('monscript');
@@ -50,9 +45,7 @@ function montheme_register_assets()
 // Permettent d'afficher des données de Wordpress sur les pages du site
 
 // Prise en compte, affichage et modification du titre
-function montheme_title()
-{
-}
+function montheme_title() {}
 
 // Retire les paragraphes créés par ACF
 function acf_wysiwyg_remove_wpautop()
