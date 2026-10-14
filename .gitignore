@@ -2,11 +2,15 @@
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*/
-web/app/themes/twentytwentythree/
 web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
+web/app/wflogs/
+
+# Thèmes : seul le thème sur mesure est versionné
+web/app/themes/*
+!web/app/themes/themetybirill/
 
 # WordPress
 web/wp
@@ -15,10 +19,10 @@ web/.htaccess
 # Logs
 *.log
 
-# Dotenv
+# Dotenv (.env.example reste versionné)
 .env
 .env.*
-.env.example
+!.env.example
 
 # Composer
 /vendor
@@ -28,3 +32,11 @@ wp-cli.local.yml
 
 # Node
 /node_modules
+
+# Archives et sorties intermédiaires
+*.zip
+web/app/themes/themetybirill/sass/*.css
+web/app/themes/themetybirill/sass/*.css.map
+
+# Système
+.DS_Store

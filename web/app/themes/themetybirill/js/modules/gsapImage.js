@@ -2,27 +2,25 @@
 
 export function gsapImage() {
 
-  const imgs = Array.prototype.slice.call(document.querySelectorAll('img')), 
-        logo = document.querySelector('.logo'), 
-        marginTop = document.querySelector('body').clientHeight - window.innerHeight, arrayImg = imgs.shift();
+  const logo = document.querySelector('.logo');
+  if (!logo) return;
 
-  // console.log(logo)
-  // console.log(marginTop)
+  // Toutes les images sauf la première (le logo de la navigation)
+  const imgs = Array.from(document.querySelectorAll('img')).slice(1),
+        marginTop = document.body.clientHeight - window.innerHeight;
+
   let optionsLogo = {
-    // root: null,
     rootMargin: `${marginTop}px 0px -80% 0px`,
     threshold: 0.5
   };
 
   let options = {
-    // root: null,
     rootMargin: `${marginTop}px 0px -30% 0px`,
     threshold: 0
   };
 
 
   function handleLogo(entries) {
-    // console.log(entries)
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = 0;
@@ -37,7 +35,6 @@ export function gsapImage() {
 
 
   function handleIntersect(entries) {
-    // console.log(entries)
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.scale = 1;

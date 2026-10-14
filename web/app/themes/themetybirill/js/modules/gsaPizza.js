@@ -2,10 +2,11 @@
 
 export function gsaPizza() {
   
-  const pizz = document.querySelector('.pizza')
+  const pizza = document.querySelector('.pizza');
+  if (!pizza) return;
 
-  pizz.addEventListener('click', () => {
-    pizz.style.display = "none";
+  pizza.addEventListener('click', () => {
+    pizza.style.display = 'none';
   });
 
 
@@ -16,7 +17,6 @@ export function gsaPizza() {
       start: 'top bottom',
       end: 'bottom top',
       scrub: true,
-      // markers: true,
     },
     rotate: 1080,
     ease: 'none'

@@ -1,27 +1,24 @@
 {
   "name": "tybirill",
-  "version": "1.0.0",
-  "description": "<p align=\"center\">   <a href=\"https://roots.io/bedrock/\">     <img alt=\"Bedrock\" src=\"https://cdn.roots.io/app/uploads/logo-bedrock.svg\" height=\"100\">   </a> </p>",
-  "main": "gulpfile.js",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Thème WordPress sur mesure de la Pizzeria Ty Birill (Bedrock, GSAP, Swiper)",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build",
+    "dev": "gulp",
+    "lint:php": "vendor/bin/phpcs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/olivierraude/09_Bedrock.git"
+    "url": "git+https://github.com/olivierraude/wordpress-tybirill.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/olivierraude/09_Bedrock/issues"
-  },
-  "homepage": "https://github.com/olivierraude/09_Bedrock#readme",
+  "author": "Olivier Raude <https://www.olivierraude.com>",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "browser-sync": "^2.29.3",
     "cssnano": "^6.0.1",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
@@ -34,8 +31,5 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ],
-  "dependencies": {
-    "locomotive-scroll": "^4.1.4"
-  }
+  ]
 }

@@ -3,36 +3,44 @@
 export function nav() {
 
   const burgerButton = document.querySelector('.nav-toggler'),
-      body = document.querySelector('body'),
-      navigation = document.querySelector('nav'),
-      navLink = document.querySelectorAll('nav a'),
-      pizza = document.querySelector('.pizza'),
-      footerLink = document.querySelector('.footer-nav a');
+        body = document.body,
+        navigation = document.querySelector('nav'),
+        navLinks = document.querySelectorAll('nav a'),
+        pizza = document.querySelector('.pizza'),
+        footerLink = document.querySelector('.footer-nav a');
 
-  burgerButton.addEventListener('click', toggleNav);
-  navLink.forEach((link) => { link.addEventListener('click', toggleNav); });
+  if (!burgerButton || !navigation) return;
+
+  let tween = null;
 
   function toggleNav() {
-    console.log('I\'m in!');
-    burgerButton.classList.toggle('active');
+    const isOpen = !navigation.classList.contains('active');
+
+    burgerButton.classList.toggle('active', isOpen);
+    burgerButton.setAttribute('aria-expanded', String(isOpen));
+    burgerButton.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
     navigation.style.top = `${window.scrollY}px`;
-    navigation.classList.toggle('active');
-    pizza.classList.toggle('active');
-    footerLink.classList.toggle('active');
-    body.classList.toggle('stop-scrolling');
+    navigation.classList.toggle('active', isOpen);
+    pizza?.classList.toggle('active', isOpen);
+    footerLink?.classList.toggle('active', isOpen);
+    body.classList.toggle('stop-scrolling', isOpen);
 
-    let tween = gsap.to(".nav li a", {
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      stagger: 0.1
-    });
-
-    revertTween(tween);
+    if (isOpen) {
+      tween = gsap.to('.nav li a', {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.1,
+      });
+    } else if (tween) {
+      tween.revert();
+      tween = null;
+    }
   };
 
-  function revertTween(tween) {
-    burgerButton.addEventListener('click', () => { tween.revert(); });
-    navLink.forEach((link) => link.addEventListener('click', () => { tween.revert(link); }));
-  };
+  // Un seul écouteur par élément, déclaré une fois
+  burgerButton.addEventListener('click', toggleNav);
+  navLinks.forEach((link) => link.addEventListener('click', () => {
+    if (navigation.classList.contains('active')) toggleNav();
+  }));
 };
