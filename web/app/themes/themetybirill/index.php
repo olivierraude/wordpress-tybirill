@@ -1,18 +1,17 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
 <div class="container">
-
-  <h1>Ferme Ty Birill</h1>
+  <h1><?php echo esc_html(get_bloginfo('name')); ?></h1>
 
   <?php if (have_posts()) : ?>
     <ul>
       <?php while (have_posts()) : the_post(); ?>
-        <li><?php the_title() ?></li>
+        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
       <?php endwhile; ?>
     </ul>
   <?php else : ?>
-    <h1>Il n'y a pas d'article!</h1>
+    <p>Aucun contenu pour le moment.</p>
   <?php endif; ?>
 </div>
 
-<?php get_footer() ?>
+<?php get_footer(); ?>

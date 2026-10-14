@@ -32,7 +32,7 @@ $podcast  = get_field('url_podcast');
 <section>
   <div class="container logo">
     <h1>
-      <img src="<?php echo esc_url(get_theme_file_uri('img/logo.png')); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
+      <img src="<?php echo esc_url(get_theme_file_uri('img/logo.png')); ?>" alt="Pizzeria - Ferme Ty Birill">
     </h1>
   </div>
 </section>

@@ -16,7 +16,6 @@ export function gsapText() {
       stagger: 0.2,
       scrollTrigger: {
         trigger: '.about',
-        // markers: true,
         start: 'top 730px',
         end: 'top 280px',
         scrub: true,
@@ -31,7 +30,6 @@ export function gsapText() {
       stagger: 0.2,
       scrollTrigger: {
         trigger: '.takeout',
-        // markers: true,
         start: 'top 600px',
         end: 'center center',
         scrub: true,
@@ -46,10 +44,8 @@ export function gsapText() {
     y: 0,
     opacity: 1,
     duration: 1,
-    // stagger: .2,
     scrollTrigger: {
       trigger: '.container.menu',
-      // markers: true,
       start: 'top 750px',
       end: 'bottom 550px',
       scrub: true,

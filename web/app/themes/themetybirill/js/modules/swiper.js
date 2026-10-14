@@ -1,15 +1,29 @@
-/** PROGRESSBAR SWIPER */
+/** CARROUSEL PHOTOS ET VIDÉOS */
 
 export function swiper() {
 
-const swiper = new Swiper('.container-slider', {
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'progressbar',
+  if (!document.querySelector('.mySwiper')) return;
+
+  new Swiper('.mySwiper', {
+    spaceBetween: 60,
+    centeredSlides: true,
+    loop: true,
+    grabCursor: true,
+    speed: 1500,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
     },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+    effect: 'coverflow',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      scale: 0.85,
+    },
+    breakpoints: {
+      320: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      992: { slidesPerView: 3 },
     },
   });
-} 
+};
