@@ -1,8 +1,23 @@
-<?php get_header() ?>
+<?php
+/**
+ * Page d'accueil.
+ *
+ * Les contenus viennent des champs ACF de la page d'accueil et des
+ * options « Pizzeria » (Réglages > Pizzeria). Toutes les sorties sont échappées.
+ */
+
+get_header();
+
+$schedule = get_option('pizzeria_schedule', '');
+$address  = get_option('pizzeria_address', '');
+$phone    = get_option('pizzeria_phone', '');
+$mail     = get_option('pizzeria_mail', '');
+$podcast  = get_field('url_podcast');
+?>
 
 <form class="color-picker" action="">
   <fieldset>
-    <legend class="visually-hidden">Pick a color</legend>
+    <legend class="visually-hidden">Choisir une couleur</legend>
     <label class="visually-hidden" for="blue">Majorelle</label>
     <input type="radio" name="theme" id="blue" checked>
     <label class="visually-hidden" for="green">Ajonc</label>
@@ -11,120 +26,103 @@
 </form>
 
 <div class="pizza">
-  <img src="./app/uploads/2024/01/pizza.png" alt="Pizzeria - Ferme Ty Birill">
+  <img src="<?php echo esc_url(get_theme_file_uri('img/pizza.png')); ?>" alt="" width="350" height="350">
 </div>
 
-<!-- <section id="smooth-content"> -->
 <section>
-
   <div class="container logo">
     <h1>
-      <img src="./app/uploads/2024/01/logo-500_3.png" class="" alt="Pizzeria - Ferme Ty Birill">
+      <img src="<?php echo esc_url(get_theme_file_uri('img/logo.png')); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
     </h1>
   </div>
-
 </section>
 
 <section id="about">
-
   <div class="container about">
     <div class="text-about">
-      <?php while (have_posts()) : the_post(); ?>
-        <h2><?= get_field('titre_a_propos') ?></h2>
-        <p><?= get_field('texte_a_propos', false, false) ?></p>
-      <?php endwhile; ?>
+      <h2><?php echo esc_html(get_field('titre_a_propos')); ?></h2>
+      <p><?php echo wp_kses_post(get_field('texte_a_propos', false, false)); ?></p>
     </div>
 
     <div class="img-about">
-      <?php while (have_posts()) : the_post(); ?>
-        <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_a_propos'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_a_propos'), '_wp_attachment_image_alt', TRUE); ?>" />
-      <?php endwhile; ?>
+      <?php echo wp_get_attachment_image(get_field('image_a_propos'), 'large', false, ['class' => 'img']); ?>
     </div>
   </div>
-
 </section>
 
 <section id="gallery">
-
-  <!-- <?= do_shortcode('[swiper_carousel]'); ?> -->
-  <?= get_template_part('parts/carousel') ?>
-  
+  <?php get_template_part('parts/carousel'); ?>
 </section>
 
 <section id="menu">
-
   <div class="container menu">
     <h2>MENU</h2>
     <br />
-    <a href="#"><?= get_field('texte_lien_menu') ?></a>
+    <a href="#"><?php echo esc_html(get_field('texte_lien_menu')); ?></a>
   </div>
-
 </section>
 
 <section id="takeout">
-
   <div class="container takeout">
     <div class="text-takeout">
-      <?php while (have_posts()) : the_post(); ?>
-        <h2><?= get_field('titre_pour_emporter') ?></h2>
-        <p><?= get_field('texte_pour_emporter', false, false) ?></p>
-      <?php endwhile; ?>
+      <h2><?php echo esc_html(get_field('titre_pour_emporter')); ?></h2>
+      <p><?php echo wp_kses_post(get_field('texte_pour_emporter', false, false)); ?></p>
     </div>
 
     <div class="img-takeout">
-      <?php while (have_posts()) : the_post(); ?>
-        <img class="img" src="<?= wp_get_attachment_image_src(get_field('image_pour_emporter'), 'origin')[0]; ?>" alt="<?= get_post_meta(get_field('image_pour_emporter'), '_wp_attachment_image_alt', TRUE); ?>" />
-      <?php endwhile; ?>
+      <?php echo wp_get_attachment_image(get_field('image_pour_emporter'), 'large', false, ['class' => 'img']); ?>
     </div>
   </div>
-
 </section>
 
-<!-- TODO -> Faire un widget avec le marquee -->
-<div class="container-marquee">
+<div class="container-marquee" aria-hidden="true">
   <div class="marquee">
-    SLOW FOOD &#10168 GOOD FOOD - CIRCUIT COURT &#10168 INGRÉDIENTS DE LA FERME -
+    SLOW FOOD &#10168; GOOD FOOD - CIRCUIT COURT &#10168; INGRÉDIENTS DE LA FERME -
   </div>
 </div>
 
-<?php 
-  //var_dump(get_field('url_podcast'));
-  $url = (get_field('url_podcast'));
-  // var_dump($url);
-
-  if ($url != null) : ?>
-
-    <section id="audio">
-
-      <div class="container audio">
+<?php if ($podcast) : ?>
+  <section id="audio">
+    <div class="container audio">
       <h2>On parle de nous par ici</h2>
-        <audio controls id="player" src="<?= $url ?>">
-          Une petite phrase pour les vieux navigateurs qui ne connaissent pas la balise audio... (c'est pas obligatoire).
-        </audio>
-      </div>
-
-    </section>
-  <?php endif; ?>
+      <audio controls id="player" src="<?php echo esc_url($podcast); ?>">
+        Votre navigateur ne permet pas d'écouter ce podcast.
+        <a href="<?php echo esc_url($podcast); ?>">Télécharger l'épisode</a>.
+      </audio>
+    </div>
+  </section>
+<?php endif; ?>
 
 <section>
+  <?php if ($schedule) : ?>
+    <div id="contact" class="container contact">
+      <h2>HORAIRES</h2>
+      <p><?php echo nl2br(esc_html($schedule)); ?></p>
+    </div>
+  <?php endif; ?>
 
-  <div id="contact" class="container contact">
-    <h2>HORAIRES</h2>
-    <p><?= get_option('pizzeria_schedule') ?></p>
-  </div>
-  <div class="container contact">
-    <h2>ADRESSE</h2>
-    <a href="https://www.google.com/maps/place/FERME+TY+BIRILL/@48.6646275,-4.0794388,17z/data=!3m1!4b1!4m6!3m5!1s0x4813e38471b53d53:0xdcf58cf2bd600b1!8m2!3d48.6646275!4d-4.0794388!16s%2Fg%2F11kppw1glf?authuser=0&hl=fr&entry=ttu" target="_blank"><?= get_option('pizzeria_address') ?></a>
-  </div>
-  <div class="container contact">
-    <h2>TÉLÉPHONE</h2>
-    <a href="tel:<?= str_replace(' ', '', get_option('pizzeria_phone')); ?>"><?= get_option('pizzeria_phone') ?></a>
-  </div>
-  <div class="container contact">
-    <h2>COURRIEL</h2>
-    <a href="mailto#" target="_blank"><?= get_option('pizzeria_mail') ?></a>
-  </div>
+  <?php if ($address) : ?>
+    <div class="container contact">
+      <h2>ADRESSE</h2>
+      <a href="https://www.google.com/maps/place/FERME+TY+BIRILL/@48.6646275,-4.0794388,17z" target="_blank" rel="noopener">
+        <?php echo nl2br(esc_html($address)); ?>
+      </a>
+    </div>
+  <?php endif; ?>
 
+  <?php if ($phone) : ?>
+    <div class="container contact">
+      <h2>TÉLÉPHONE</h2>
+      <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', $phone)); ?>"><?php echo esc_html($phone); ?></a>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($mail) : ?>
+    <div class="container contact">
+      <h2>COURRIEL</h2>
+      <a href="mailto:<?php echo esc_attr(antispambot($mail)); ?>"><?php echo esc_html(antispambot($mail)); ?></a>
+    </div>
+  <?php endif; ?>
 </section>
 
-<?php get_footer() ?>
+<?php get_footer(); ?>
