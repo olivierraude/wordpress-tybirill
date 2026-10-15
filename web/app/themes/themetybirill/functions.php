@@ -42,22 +42,22 @@ function tybirill_asset_version(string $file): string
  */
 function tybirill_assets(): void
 {
+    $dev = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG && file_exists(get_theme_file_path('sass/style.css'));
+
+    $css = $dev ? 'sass/style.css' : 'dist/css/style.min.css';
+    $js  = $dev ? 'js/main.js' : 'dist/js/all.min.js';
+
     wp_enqueue_style('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css', [], null);
-    wp_enqueue_style(
-        'tybirill',
-        get_theme_file_uri('dist/css/style.min.css'),
-        ['swiper'],
-        tybirill_asset_version('dist/css/style.min.css')
-    );
+    wp_enqueue_style('tybirill', get_theme_file_uri($css), ['swiper'], tybirill_asset_version($css));
 
     wp_enqueue_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js', [], null, true);
     wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', [], null, true);
     wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', ['gsap'], null, true);
     wp_enqueue_script(
         'tybirill',
-        get_theme_file_uri('dist/js/all.min.js'),
+        get_theme_file_uri($js),
         ['swiper', 'gsap', 'gsap-scrolltrigger'],
-        tybirill_asset_version('dist/js/all.min.js'),
+        tybirill_asset_version($js),
         true
     );
 }
