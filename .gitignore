@@ -7,6 +7,8 @@ web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
 web/app/wflogs/
+web/app/languages/
+web/app/litespeed/
 
 # Thèmes : seul le thème sur mesure est versionné
 web/app/themes/*
